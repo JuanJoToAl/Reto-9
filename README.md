@@ -243,47 +243,44 @@ print(timer)
 **Importante:** Revisar este [hilo](https://stackoverflow.com/questions/8220801/how-to-use-timeit-module).
 
 ```python
-# Configuración para manejar números grandes
-import sys
-sys.set_int_max_str_digits(10000000)
+#import time
 
-# Función para calcular el término n de la sucesión de Fibonacci
-def Fibonacci(termino) -> int:
-    sumando = 1
-    terminoAnterior = 0
-
-    # Casos especiales para los primeros términos
-    if termino == 1:
-        print(f"El valor de la sucesión en el término 1 es: {sumando}")
-    elif termino == 0:
-        print(f"El valor de la sucesión en el término 0 es 0")
-    elif termino < 0:
-        print(f"No hay términos negativos")
+# Función que calcula el n-ésimo término de la sucesión de Fibonacci
+# de forma recursiva.
+def fiborecursivo(n: int) -> int:
+    if n <= 1:
+        return n
     else:
-        # Cálculo iterativo de los términos
-        for i in range(1, termino):
-            suma = sumando + terminoAnterior
-            terminoAnterior = sumando
-            sumando = suma
-        print(f"El valor de la sucesión en el término {i + 1} es: {suma}")
+        return fiborecursivo(n - 1) + fiborecursivo(n - 2)
 
-# Pide al usuario el término deseado
+# Inicio del programa principal
 if __name__ == "__main__":
-    termino = int(input("Ingrese el término de la sucesión de Fibonacci: "))
-    Fibonacci(termino)
 
-# Mide el tiempo de ejecución para un término grande
-import time
-start_time = time.time()
-Fibonacci(2100000)
-end_time = time.time()
-timer = end_time - start_time
+    # Variable para el número de término
+    num : int = 1
 
-# Comprueba si el tiempo supera un minuto
-if timer > 60:
-    print(f"El tiempo de ejecución para {termino} terminos es significativo porque pasa el minuto")
-else:
-    print(timer)
+    # Medición del tiempo de ejecución
+    start_time = time.time()
+
+    # Cálculo del n-ésimo término
+    seriefibo = fiborecursivo(num)
+    end_time = time.time()
+    
+    # Cálculo del tiempo de ejecución
+    timer = end_time - start_time
+
+    # Bucle para aumentar el número de términos hasta superar 4 segundos
+    while timer <= 4:
+        num += 1
+        start_time = time.time()
+        seriefibo = fiborecursivo(num)
+        end_time = time.time()
+        timer += end_time - start_time
+
+    # Impresión del resultado
+    print(f"La sucesión en el término {num} es {seriefibo}")
+    print(f"El tiempo de ejecución para {num} términos es significativo")
+    print(f"Tiempo: {timer} segundos")
 ```
 
 ### 5. Crear cuenta en [stackoverflow](https://stackoverflow.com/) y adjuntar imagen en el repo
