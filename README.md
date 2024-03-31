@@ -243,7 +243,7 @@ print(timer)
 **Importante:** Revisar este [hilo](https://stackoverflow.com/questions/8220801/how-to-use-timeit-module).
 
 ```python
-#import time
+import time
 
 # Función que calcula el n-ésimo término de la sucesión de Fibonacci
 # de forma recursiva.
