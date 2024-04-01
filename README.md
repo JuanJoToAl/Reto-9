@@ -282,6 +282,55 @@ if __name__ == "__main__":
     print(f"El tiempo de ejecución para {num} términos es significativo")
     print(f"Tiempo: {timer} segundos")
 ```
+### 4.1. Extra: código que determina desde que número de la serie la diferencia de tiempo se vuelve significativa usando iteración de sumas.
+
+```python
+# Configuración para manejar números grandes
+import sys
+sys.set_int_max_str_digits(1000000000)
+
+import time
+
+# Función para calcular el término n de la sucesión de Fibonacci
+def Fibonacci(sumando, terminoAnterior) -> int:
+    
+    
+
+    # Cálculo iterativo de los términos
+    suma = sumando + terminoAnterior
+
+    print(f" {sumando} + {terminoAnterior} = {suma} termino {termino}")
+
+    terminoAnterior = sumando
+    sumando = suma
+    
+    return sumando, terminoAnterior
+    
+# Pide al usuario el término deseado
+if __name__ == "__main__":
+    sumando : int = 1
+    termino : int = 1
+    terminoAnterior = 0
+
+
+# Mide el tiempo de ejecución para un término grande
+    start_time = time.time()
+    sumando, terminoAnterior = Fibonacci(sumando, terminoAnterior)
+    end_time = time.time()
+    timer = end_time - start_time
+   
+    while timer <= 4:
+        termino += 1
+        start_time = time.time()
+        sumando, terminoAnterior = Fibonacci(sumando, terminoAnterior) 
+        end_time = time.time()
+        timer += end_time - start_time
+        
+
+    print(f"El valor de la sucesión en el término {termino + 1} es: {sumando}")
+    print(f"El tiempo de ejecución para {termino + 1}  términos es significativo")
+    print(f"Tiempo: {timer}")
+```
 
 ### 5. Crear cuenta en [stackoverflow](https://stackoverflow.com/) y adjuntar imagen en el repo
 
