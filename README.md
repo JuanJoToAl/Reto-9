@@ -343,4 +343,4 @@ if __name__ == "__main__":
 ### 6. Cosas de adultos....ir a [linkedin](https://www.linkedin.com/) y crear perfil....NO IMPORTA que estén iniciando, si tienen tiempo para redes poco útiles como fb, insta, o tiktok tienen tiempo para crear un perfil mamalón. Dejar enlace en el repo.
 
 Enlace de perfil en linkedin: 
-https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BfMCZ1PGTRYGqagzYLMfDFg%3D%3D
+www.linkedin.com/in/juan-jose-tobar-alvarez
